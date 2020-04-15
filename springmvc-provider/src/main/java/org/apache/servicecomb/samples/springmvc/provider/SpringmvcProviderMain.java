@@ -15,18 +15,13 @@
  * limitations under the License.
  */
 
-package com.example.demo;
+package org.apache.servicecomb.samples.springmvc.provider;
 
-import org.apache.servicecomb.provider.rest.common.RestSchema;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.apache.servicecomb.foundation.common.utils.BeanUtils;
 
-@RestSchema(schemaId = "hello")
-@RequestMapping(path = "/")
-public class HelloImpl {
+public class SpringmvcProviderMain {
 
-    @GetMapping(path = "/hello")
-    public String hello() {
-        return "Hello World!";
-    }
+  public static void main(String[] args) {
+    BeanUtils.init();
+  }
 }

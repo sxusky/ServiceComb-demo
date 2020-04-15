@@ -15,17 +15,25 @@
  * limitations under the License.
  */
 
-package com.example.demo;
+package org.apache.servicecomb.samples.springmvc.provider;
 
-import org.apache.servicecomb.provider.springmvc.reference.RestTemplateBuilder;
-import org.springframework.web.client.RestTemplate;
+public class SpringmvcBasicResponseModel {
+  private int responseId;
+  private String resultMessage;
 
-public class HelloConsumer {
-    private final RestTemplate restTemplate = RestTemplateBuilder.create();
+  public int getResponseId() {
+    return responseId;
+  }
 
-    public void invokeHello() {
-        //service url is : cse://serviceName/operation
-        String serviceName = "HelloServiceComb";
-        restTemplate.getForObject("cse://" + serviceName + "/hello", String.class);
-    }
+  public void setResponseId(int responseId) {
+    this.responseId = responseId;
+  }
+
+  public String getResultMessage() {
+    return resultMessage;
+  }
+
+  public void setResultMessage(String resultMessage) {
+    this.resultMessage = resultMessage;
+  }
 }
